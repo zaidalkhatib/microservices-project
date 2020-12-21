@@ -1,19 +1,9 @@
-import React, {useEffect, useState} from "react";
-import axios from "axios";
-const CommentList = ({postId}) => {
-  const [comments, setComments] = useState([]);
-  useEffect(async () => {
-    const res = await axios.get(
-      `http://localhost:4001/posts/${postId}/comments`
-    );
-    console.log("dsadsa", postId);
-    setComments(res.data);
-  }, []);
+import React from "react";
+const CommentList = ({comments}) => {
   const renederComments = comments.map((comment) => {
     return (
       <div>
-        {console.log("Dasdsa", comment.id)}
-        <li style={{margin: "15px", listStyleType: "none"}}>
+        <li key={comment.id} style={{margin: "15px", listStyleType: "none"}}>
           {comment.content}
         </li>
       </div>

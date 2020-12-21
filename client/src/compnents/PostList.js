@@ -9,9 +9,9 @@ const PostList = () => {
   }, []);
   const displayPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/posts");
-      console.log(response);
-      console.log(response.data.title);
+      const response = await axios.get("http://localhost:4002/posts");
+
+      console.log(response.data);
       setPosts(response.data);
     } catch (error) {
       console.error(error);
@@ -28,8 +28,7 @@ const PostList = () => {
         >
           <div className="card-body">
             <h3 key={post.id}>{post.title}</h3>
-            {console.log("post", post.id)}
-            <CommentList postId={post.id} />
+            <CommentList comments={post.comments} />
             <CommentCreate postId={post.id} />
           </div>
         </div>

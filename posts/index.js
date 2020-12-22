@@ -7,6 +7,7 @@ const axios = require("axios");
 app.use(bodyParser.json());
 app.use(cors());
 const posts = {};
+
 app.get("/posts", (req, res) => {
   res.send(posts);
 });

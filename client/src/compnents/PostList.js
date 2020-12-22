@@ -27,7 +27,9 @@ const PostList = () => {
           style={{width: "90%", marginBottom: "20px"}}
         >
           <div className="card-body">
-            <h3 key={post.id}>{post.title}</h3>
+            <h3 style={{textAlign: "center"}} key={post.id}>
+              {post.title}
+            </h3>
             <CommentList comments={post.comments} />
             <CommentCreate postId={post.id} />
           </div>

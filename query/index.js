@@ -34,13 +34,14 @@ app.get("/posts", (req, res) => {
 
 app.post("/events", (req, res) => {
   const {type, data} = req.body;
+
   handleEvent(data, type);
   res.send({});
 });
 
 app.listen(4002, async () => {
   console.log("listeing on 4002");
-  const res = await axios.get("http://localhost:4005/event");
+  const res = await axios.get("http://event-bus-srv:4005/events");
   console.log(res.data);
   for (let e of res.data) {
     handleEvent(e.data, e.type);

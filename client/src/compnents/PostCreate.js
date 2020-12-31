@@ -9,7 +9,7 @@ const PostCreate = () => {
   const [photo, setPhoto] = useState("");
   const [isBad, setIsBad] = useState(false);
   const handleClick = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     if (title.length > 0) {
       axios.post("http://localhost:4000/posts", {title});
       setTitle("");

@@ -8,11 +8,9 @@ app.use(bodyParser.json());
 app.use(cors());
 const posts = {};
 
-app.get("/posts", (req, res) => {
-  res.send(posts);
-});
 
-app.post("/posts", async (req, res) => {
+app.post("/posts/create", async (req, res) => {
+  console.log("recived")
   const id = randomBytes(4).toString("hex");
   const {title} = req.body;
   posts[id] = {

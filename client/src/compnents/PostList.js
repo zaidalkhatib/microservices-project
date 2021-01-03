@@ -9,8 +9,8 @@ const PostList = () => {
   }, []);
   const displayPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:4002/posts");
-
+      console.log("hello");
+      const response = await axios.get("http://posts.com/posts");
       console.log(response.data);
       setPosts(response.data);
     } catch (error) {

@@ -6,12 +6,11 @@ toast.configure();
 
 const PostCreate = () => {
   const [title, setTitle] = useState("");
-  const [photo, setPhoto] = useState("");
   const [isBad, setIsBad] = useState(false);
   const handleClick = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     if (title.length > 0) {
-      axios.post("http://localhost:4000/posts", {title});
+      axios.post("http://posts.com/posts/create", {title});
       setTitle("");
     } else {
       notify();
@@ -20,12 +19,11 @@ const PostCreate = () => {
   const notify = () =>
     toast("The Post is Empty, Enter Something!", {type: "error"});
   const handleChange = (e) => {
-    setPhoto(e.target.files[0]);
   };
 
   return (
     <div>
-      <h3> Create Your Post</h3>
+      <h3> Create Your Post!!</h3>
       {isBad ? (
         <div class="alert alert-warning" role="alert">
           This Post has Illegal Word/s
@@ -33,7 +31,7 @@ const PostCreate = () => {
       ) : null}
       <form>
         <div className="form-group mt-3">
-          <label>Enter Your Post</label>
+          <label>Enter Your Post!</label>
           <input
             type="text"
             className="form-control"

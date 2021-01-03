@@ -1,5 +1,5 @@
 # microservices-project
-
+<p> This is a fullstack blog posts project built with micro-services design </p>
 <H1>Infrastructure </h1> 
 <ul>
   <li>Docker</li>
